@@ -71,3 +71,5 @@ This project aims to develop a web platform that helps users discover relaxing a
 ## License
 This project is for educational and developmental purposes only, and any redistribution or commercial use should be discussed with the project stakeholders.
 
+## Progress
+20250418: created the homepage version1

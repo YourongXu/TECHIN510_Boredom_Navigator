@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Discover Your Next Adventure</h1>
+            <p class="subtitle">Find your perfect activity from our curated selection</p>
+        </header>
+        
+        <div class="cards-container" id="cardsContainer">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+        
+        <button id="regenerateBtn" class="regenerate-btn">
+            <i class="fas fa-sync-alt"></i>
+            Generate New Activities
+        </button>
+    </div>
+    
+    <div id="fullscreenCard" class="fullscreen-card hidden">
+        <div class="fullscreen-content">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 id="fullscreenTitle"></h2>
+            <p id="fullscreenDescription"></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
