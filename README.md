@@ -71,7 +71,19 @@ This project aims to develop a web platform that helps users discover relaxing a
 ## License
 This project is for educational and developmental purposes only, and any redistribution or commercial use should be discussed with the project stakeholders.
 
+---
+
 ## Progress
 20250418: created the version1 (homepage)
 20250425: meet with client and discuessed future features(3 in total), will be updated within 1 week
 20250502: created the version2 (login - homepage - activity)
+
+---
+
+## Meeting Notes
+- **20250418**: delivered the version 1
+  - Code: approved by the client 
+- **20250425**: received 3 future features
+- **20250502**: delivered the version 2  
+  -  Code: approved by the client  
+  -  Improvement: improve UI
