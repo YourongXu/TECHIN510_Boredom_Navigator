@@ -87,3 +87,5 @@ This project is for educational and developmental purposes only, and any redistr
 - **20250502**: delivered the version 2  
   -  Code: approved by the client  
   -  Improvement: improve UI
+- **20250516**: delivered the version 3   
+  -  Improvement: improve UI, updated icons
