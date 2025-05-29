@@ -1,0 +1,1145 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #0F6972;
+    --secondary: #108C8C;
+    --accent: #7ACBCC;
+    --success: #C2D05F;
+    --warning: #F2BB16;
+    --background: rgba(185, 217, 206, 0.05);
+    --text: #0F6972;
+    --shadow: 0 4px 6px rgba(15, 105, 114, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--background);
+    min-height: 100vh;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Profile Section */
+.profile-section {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.profile-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    width: 220px;
+    display: none;
+    overflow: hidden;
+    transform-origin: top right;
+    animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(15, 105, 114, 0.1);
+    padding-left: 2rem;
+}
+
+.dropdown-item i {
+    color: var(--primary);
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+/* Registration Form */
+.registration-form {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    margin: 0 auto;
+    transform: translateY(0);
+    transition: var(--transition);
+}
+
+.registration-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input[type="email"] {
+    padding: 1rem;
+    border: 2px solid rgba(15, 105, 114, 0.2);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 105, 114, 0.1);
+}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(15, 105, 114, 0.3);
+}
+
+/* Weather Cards */
+.weather-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.weather-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 105, 114, 0.1), rgba(16, 140, 140, 0.1));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.weather-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(15, 105, 114, 0.1);
+}
+
+.weather-card:hover::before {
+    opacity: 1;
+}
+
+.weather-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.weather-card:hover img {
+    transform: scale(1.1);
+}
+
+.weather-card span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Activity Cards */
+.activities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    perspective: 1000px;
+}
+
+.activity-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 105, 114, 0.1), rgba(16, 140, 140, 0.1));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.activity-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+}
+
+.activity-card:hover::after {
+    opacity: 1;
+    animation: shine 1.5s infinite;
+}
+
+.activity-card img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 1;
+}
+
+.activity-card:hover img {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+}
+
+.activity-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.activity-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    transition: width 0.3s ease;
+}
+
+.activity-card:hover h3::after {
+    width: 80%;
+}
+
+.activity-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Decorative elements for activity cards */
+.activity-card .decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.activity-card .decoration-1 {
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+}
+
+.activity-card .decoration-2 {
+    bottom: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Activity card loading animation */
+.activity-card.loading {
+    animation: cardPulse 1.5s infinite;
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Activity Detail */
+.activity-detail {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+    transform: translateY(0);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.activity-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+}
+
+.activity-detail .decoration {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(15, 105, 114, 0.1), rgba(16, 140, 140, 0.1));
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.activity-detail .decoration-1 {
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+}
+
+.activity-detail .decoration-2 {
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+}
+
+.activity-content {
+    position: relative;
+    z-index: 1;
+}
+
+.activity-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+}
+
+.activity-detail:hover .activity-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.activity-detail h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.activity-detail h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    transition: width 0.3s ease;
+}
+
+.activity-detail:hover h2::after {
+    width: 80%;
+}
+
+.weather-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.weather-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.weather-badge span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    text-transform: capitalize;
+}
+
+.description {
+    margin: 2rem 0;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: var(--text);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.button-group button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Success Page */
+.success-message {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+    transform: translateY(0);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.success-message:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--success);
+}
+
+.success-message .decoration {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(15, 105, 114, 0.1), rgba(16, 140, 140, 0.1));
+    z-index: 0;
+}
+
+.success-message .decoration-1 {
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+}
+
+.success-message .decoration-2 {
+    bottom: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+}
+
+.success-content {
+    position: relative;
+    z-index: 1;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--success);
+    margin-bottom: 1.5rem;
+    animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.success-message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.success-message h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--success), #9bc200);
+    transition: width 0.3s ease;
+}
+
+.success-message:hover h2::after {
+    width: 80%;
+}
+
+.activity-info {
+    background: rgba(184, 226, 0, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+}
+
+.activity-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.activity-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+    transition: var(--transition);
+}
+
+.success-message:hover .activity-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.weather-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.weather-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.weather-badge span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    text-transform: capitalize;
+}
+
+.activity-details {
+    text-align: center;
+}
+
+.activity-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.activity-date {
+    color: #666;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.activity-date i {
+    color: var(--success);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.home-btn, .history-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    box-shadow: var(--shadow);
+}
+
+.home-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--success), #9bc200);
+    color: white;
+    z-index: 100;
+}
+
+.history-btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+}
+
+.home-btn:hover, .history-btn:hover {
+    transform: translateX(-5px) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.home-btn i, .history-btn i {
+    font-size: 1.2rem;
+}
+
+/* Home Button */
+.home-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--success), #9bc200);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.home-btn:hover {
+    transform: translateX(-5px) scale(1.1);
+    box-shadow: 0 4px 8px rgba(184, 226, 0, 0.3);
+}
+
+.home-btn i {
+    font-size: 1.2rem;
+}
+
+/* History Page */
+.history-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    perspective: 1000px;
+}
+
+.history-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.history-item:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary);
+}
+
+.history-item .decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.history-item .decoration-1 {
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+}
+
+.history-item .decoration-2 {
+    bottom: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+}
+
+.history-content {
+    position: relative;
+    z-index: 1;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.history-activity-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.history-item:hover .history-activity-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.history-weather {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(241, 145, 226, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.history-weather-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.history-weather span {
+    font-weight: 500;
+    color: var(--text);
+    text-transform: capitalize;
+}
+
+.history-details {
+    text-align: left;
+}
+
+.history-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.history-details h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    transition: width 0.3s ease;
+}
+
+.history-item:hover .history-details h3::after {
+    width: 100%;
+}
+
+.history-date {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.history-date i {
+    color: var(--accent);
+}
+
+/* Regenerate Button */
+.regenerate-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.regenerate-btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.regenerate-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    box-shadow: var(--shadow);
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 4px 8px rgba(241, 145, 226, 0.3);
+}
+
+.back-btn i {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .weather-cards,
+    .activities-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .profile-section {
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .activity-detail,
+    .success-message {
+        padding: 2rem;
+    }
+
+    .back-btn {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .history-container {
+        grid-template-columns: 1fr;
+    }
+
+    .history-item {
+        padding: 1.5rem;
+    }
+
+    .history-activity-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .history-weather {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .history-weather-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .activity-detail {
+        padding: 2rem;
+    }
+
+    .activity-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .activity-detail h2 {
+        font-size: 2rem;
+    }
+
+    .weather-badge {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .weather-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .success-message {
+        padding: 2rem;
+    }
+
+    .success-icon {
+        font-size: 3rem;
+    }
+
+    .success-message h2 {
+        font-size: 2rem;
+    }
+
+    .activity-info {
+        padding: 1.5rem;
+    }
+
+    .activity-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .weather-badge {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .weather-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .activity-details h3 {
+        font-size: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .home-btn, .history-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .home-btn {
+        top: 1rem;
+        left: 1rem;
+    }
+} 
