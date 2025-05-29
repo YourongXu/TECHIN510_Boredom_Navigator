@@ -89,3 +89,5 @@ This project is for educational and developmental purposes only, and any redistr
   -  Improvement: improve UI
 - **20250516**: delivered the version 3   
   -  Improvement: improve UI, updated icons
+- **20250529**: delivered the version 4   
+  -  Improvement: updated color system
