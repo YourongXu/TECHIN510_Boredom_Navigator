@@ -93,5 +93,21 @@ This project is for educational and developmental purposes only, and any redistr
   -  Improvement: updated color system
 - **20250530**: final check   
   -  What features are complete: 1. register with email; 2.weather selection and activities recommendation; 3. activity selection history
-  - Outstanding items: UI is clear for user and very easy accessable
+  - Outstanding items: UI is clear for user and very easy accessible
   - Whether the project meets your original goal: Yes, main features are satisfied.
+ 
+## Reflection
+
+
+- **Reflection on project experience**  
+  In this project, I learned how to shift perspectives between the developer and the client, and how to communicate effectively across roles. One aspect I found particularly interesting was that instead of focusing solely on how to code HTML from scratch, we explored how to leverage AI to enhance our design efficiency. As AI grows more powerful, we shouldn’t reject it, we should learn to work alongside it.
+
+- **What went well**  
+  We collaborated smoothly as a team, with each member contributing their strengths. Our design and development process was well-structured, which helped us stay on track and meet our deadlines. Additionally, the use of AI tools significantly boosted our efficiency and allowed us to focus more on creativity and user experience.
+
+- **Challenges**  
+  The main challenge was communication—specifically, how to clearly articulate my design needs to the developer. This is an area where I still need to grow.
+
+- **Learnings**  
+  Learned to consider problems from a developer’s perspective, which helps in proposing more feasible and realistic design solutions.
+
