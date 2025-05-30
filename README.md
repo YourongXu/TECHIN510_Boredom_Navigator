@@ -92,6 +92,6 @@ This project is for educational and developmental purposes only, and any redistr
 - **20250529**: delivered the version 4   
   -  Improvement: updated color system
 - **20250530**: final check   
-  -  What features are complete: 1. register with email; 2.weather selestion and activities recommendation; 3. activity selection history
+  -  What features are complete: 1. register with email; 2.weather selection and activities recommendation; 3. activity selection history
   - Outstanding items: UI is clear for user and very easy accessable
   - Whether the project meets your original goal: Yes, main features are satisfied.
