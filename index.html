@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boredom Navigator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Boredom Navigator</h1>
+        
+        <!-- Profile Section -->
+        <div class="profile-section" id="profileSection" style="display: none;">
+            <div class="profile-icon" id="profileIcon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="dropdown-item" id="viewHistory">
+                    <i class="fas fa-history"></i>
+                    <span>View History</span>
+                </div>
+                <div class="dropdown-item" id="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Registration Form -->
+        <div class="registration-form" id="registrationForm">
+            <h2>Create Your Account</h2>
+            <form id="registerForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Weather Selection (hidden initially) -->
+        <div class="weather-selection" id="weatherSelection" style="display: none;">
+            <h2>What's the weather like today?</h2>
+            <div class="weather-cards">
+                <div class="weather-card" data-weather="sunny">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2698/2698194.png" alt="Sunny">
+                    <h3>Sunny</h3>
+                </div>
+                <div class="weather-card" data-weather="rainy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1146/1146858.png" alt="Rainy">
+                    <h3>Rainy</h3>
+                </div>
+                <div class="weather-card" data-weather="cloudy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3222/3222801.png" alt="Cloudy">
+                    <h3>Cloudy</h3>
+                </div>
+                <div class="weather-card" data-weather="snowy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6363/6363108.png" alt="Snowy">
+                    <h3>Snowy</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
